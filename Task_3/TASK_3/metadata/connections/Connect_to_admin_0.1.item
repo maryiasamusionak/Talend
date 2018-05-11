@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.relational="http:///orgomg/cwm/resource/relational.ecore">
+  <TalendMetadata:DatabaseConnection xmi:id="_om2gsFUjEeiozYtu98xYEw" name="Connect_to_admin" id="_PRxHwFUjEeiozYtu98xYEw" label="Connect_to_admin" dataPackage="_onyU0FUjEeiozYtu98xYEw" DatabaseType="Oracle with service name" DriverClass="oracle.jdbc.OracleDriver" URL="jdbc:oracle:thin:@(description=(address=(protocol=tcp)(host=192.168.56.1)(port=1521))(connect_data=(service_name=orcl)))" dbVersionString="ORACLE_12" Port="1521" Username="SYSTEM" Password="vRAc9SHLutg=" ServerName="192.168.56.1" DatasourceName="" FileFieldName="" SID="orcl" SqlSynthax="" StringQuote="" NullChar="" DbmsId="oracle_id" ProductId="ORACLE" AdditionalParams="" StandardSQL="true" SQLMode="false" UiSchema="SYSTEM">
+    <taggedValue xmi:id="_om2gsVUjEeiozYtu98xYEw" tag="Is Conn Need Reload" value="false"/>
+    <taggedValue xmi:id="_om7ZMFUjEeiozYtu98xYEw" tag="package filter" value=""/>
+    <taggedValue xmi:id="_om7ZMVUjEeiozYtu98xYEw" tag="Status" value=""/>
+    <taggedValue xmi:id="_om7ZMlUjEeiozYtu98xYEw" tag="Version" value="0.1"/>
+    <taggedValue xmi:id="_om7ZM1UjEeiozYtu98xYEw" tag="Purpose" value=""/>
+    <taggedValue xmi:id="_om7ZNFUjEeiozYtu98xYEw" tag="Description" value=""/>
+    <taggedValue xmi:id="_om7ZNVUjEeiozYtu98xYEw" tag="Author" value=""/>
+    <taggedValue xmi:id="_om7ZNlUjEeiozYtu98xYEw" tag="otherParameter"/>
+    <taggedValue xmi:id="_onOUIFUjEeiozYtu98xYEw" tag="DB ProductName" value="Oracle"/>
+    <taggedValue xmi:id="_onOUIVUjEeiozYtu98xYEw" tag="DB ProductVersion" value="Oracle Database 12c Enterprise Edition Release 12.2.0.1.0 - 64bit Production"/>
+    <taggedValue xmi:id="_onOUIlUjEeiozYtu98xYEw" tag="DB IdentifierQuoteString" value="&quot;"/>
+    <parameters xmi:id="_om2gslUjEeiozYtu98xYEw" key="CONN_PARA_KEY_USERNAME" value="SYSTEM"/>
+  </TalendMetadata:DatabaseConnection>
+  <orgomg.cwm.resource.relational:Schema xmi:id="_onyU0FUjEeiozYtu98xYEw" name="SYSTEM" dataManager="_om2gsFUjEeiozYtu98xYEw"/>
+</xmi:XMI>
