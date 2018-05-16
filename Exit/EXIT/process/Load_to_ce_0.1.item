@@ -2,7 +2,7 @@
 <talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.talend.org/dbmap" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default" jobType="Standard">
   <context confirmationNeeded="false" name="Default"/>
   <parameters>
-    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" value="0" show="false"/>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" value="160" show="false"/>
     <elementParameter field="TEXT" name="SCREEN_OFFSET_Y" value="0" show="false"/>
     <elementParameter field="TEXT" name="REPOSITORY_CONNECTION_ID" value="" show="false"/>
     <elementParameter field="TEXT" name="OOZIE_PROPERTY_TYPENAME" value="" show="false"/>
@@ -105,14 +105,14 @@
     <routinesParameter id="_V8Qt4FQzEeilY7boSqsamg" name="TalendStringUtil"/>
     <routinesParameter id="_V8A2QFQzEeilY7boSqsamg" name="TalendString"/>
   </parameters>
-  <node componentName="tELTOracleInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="96" posY="160">
+  <node componentName="tELTOracleInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="96" posY="224">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_2" show="false"/>
     <elementParameter field="TECHNICAL" name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY" show="false"/>
     <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_q8U3QFRHEeilY7boSqsamg - WRK_CUSTOMERS" show="false"/>
     <elementParameter field="TEXT" name="ELT_TABLE_NAME" value="&quot;WRK_CUSTOMERS&quot;"/>
     <elementParameter field="TEXT" name="ELT_SCHEMA_NAME" value="&quot;TALEND_USER&quot;"/>
     <elementParameter field="MAPPING_TYPE" name="MAPPING" value="oracle_id"/>
-    <elementParameter field="TEXT" name="LABEL" value="CUSTOMERS"/>
+    <elementParameter field="TEXT" name="LABEL" value="WRK_CUSTOMERS"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="TABLE" label="WRK_CUSTOMERS" name="table3">
       <column comment="" key="false" length="38" name="ID" nullable="true" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
@@ -150,7 +150,7 @@
       </column>
     </metadata>
   </node>
-  <node componentName="tELTOracleMap" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="224" posY="160">
+  <node componentName="tELTOracleMap" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="256" posY="256">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_2" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tDBConnection_4"/>
@@ -182,25 +182,25 @@
       <column comment="" key="false" length="38" name="ID" nullable="true" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="50" name="NAME" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="20" name="NAME" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="50" name="USERNAME" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="20" name="USERNAME" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="31" name="EMAIL" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="50" name="EMAIL" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="7" name="DATEOFBIRTH" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="30" name="STREETADDRESS" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="255" name="STREETADDRESS" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="15" name="CITY" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="20" name="CITY" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="13" name="COUNTRY" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="20" name="COUNTRY" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="6" name="ZIP" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
@@ -214,36 +214,50 @@
       </column>
     </metadata>
     <nodeData xsi:type="DBMapData">
-      <InputTables name="WRK_CUSTOMERS" tableName="TALEND_USER.WRK_CUSTOMERS" joinType="NO_JOIN" alias="WRK_CUSTOMERS">
-        <DBMapperTableEntries name="ID" expression="" operator=""/>
-        <DBMapperTableEntries name="NAME" expression="" operator=""/>
-        <DBMapperTableEntries name="USERNAME" expression="" operator=""/>
+      <InputTables name="TALEND_USER.CE_CUSTOMERS" tableName="TALEND_USER.CE_CUSTOMERS" joinType="NO_JOIN">
+        <DBMapperTableEntries name="ID_CUSTOMER"/>
+        <DBMapperTableEntries name="ID" expression="" operator="IS NULL"/>
+        <DBMapperTableEntries name="NAME" operator=""/>
+        <DBMapperTableEntries name="USERNAME"/>
         <DBMapperTableEntries name="EMAIL"/>
-        <DBMapperTableEntries name="DATEOFBIRTH" operator=""/>
+        <DBMapperTableEntries name="DATEOFBIRTH"/>
         <DBMapperTableEntries name="STREETADDRESS"/>
-        <DBMapperTableEntries name="CITY" operator=""/>
+        <DBMapperTableEntries name="CITY"/>
+        <DBMapperTableEntries name="COUNTRY"/>
+        <DBMapperTableEntries name="ZIP" expression="" operator=""/>
+        <DBMapperTableEntries name="STATE"/>
+        <DBMapperTableEntries name="PHONE"/>
+      </InputTables>
+      <InputTables name="TALEND_USER.WRK_CUSTOMERS" tableName="TALEND_USER.WRK_CUSTOMERS" joinType="RIGHT_OUTER_JOIN">
+        <DBMapperTableEntries name="ID" expression="TALEND_USER.CE_CUSTOMERS.ID " join="true" operator="="/>
+        <DBMapperTableEntries name="NAME"/>
+        <DBMapperTableEntries name="USERNAME"/>
+        <DBMapperTableEntries name="EMAIL"/>
+        <DBMapperTableEntries name="DATEOFBIRTH"/>
+        <DBMapperTableEntries name="STREETADDRESS"/>
+        <DBMapperTableEntries name="CITY"/>
         <DBMapperTableEntries name="COUNTRY"/>
         <DBMapperTableEntries name="ZIP"/>
         <DBMapperTableEntries name="STATE"/>
-        <DBMapperTableEntries name="PHONE" operator=""/>
+        <DBMapperTableEntries name="PHONE"/>
       </InputTables>
       <OutputTables name="table1" tableName="CE_CUSTOMERS">
         <DBMapperTableEntries name="ID_CUSTOMER" expression="customers_seq.nextval"/>
-        <DBMapperTableEntries name="ID" expression="WRK_CUSTOMERS.ID "/>
-        <DBMapperTableEntries name="NAME" expression="WRK_CUSTOMERS.NAME "/>
-        <DBMapperTableEntries name="USERNAME" expression="WRK_CUSTOMERS.USERNAME "/>
-        <DBMapperTableEntries name="EMAIL" expression="WRK_CUSTOMERS.EMAIL "/>
-        <DBMapperTableEntries name="DATEOFBIRTH" expression="WRK_CUSTOMERS.DATEOFBIRTH "/>
-        <DBMapperTableEntries name="STREETADDRESS" expression="WRK_CUSTOMERS.STREETADDRESS "/>
-        <DBMapperTableEntries name="CITY" expression="WRK_CUSTOMERS.CITY "/>
-        <DBMapperTableEntries name="COUNTRY" expression="WRK_CUSTOMERS.COUNTRY "/>
-        <DBMapperTableEntries name="ZIP" expression="WRK_CUSTOMERS.ZIP "/>
-        <DBMapperTableEntries name="STATE" expression="WRK_CUSTOMERS.STATE "/>
-        <DBMapperTableEntries name="PHONE" expression="WRK_CUSTOMERS.PHONE "/>
+        <DBMapperTableEntries name="ID" expression="TALEND_USER.WRK_CUSTOMERS.ID "/>
+        <DBMapperTableEntries name="NAME" expression="TALEND_USER.WRK_CUSTOMERS.NAME "/>
+        <DBMapperTableEntries name="USERNAME" expression="TALEND_USER.WRK_CUSTOMERS.USERNAME "/>
+        <DBMapperTableEntries name="EMAIL" expression="TALEND_USER.WRK_CUSTOMERS.EMAIL "/>
+        <DBMapperTableEntries name="DATEOFBIRTH" expression="TALEND_USER.WRK_CUSTOMERS.DATEOFBIRTH "/>
+        <DBMapperTableEntries name="STREETADDRESS" expression="TALEND_USER.WRK_CUSTOMERS.STREETADDRESS "/>
+        <DBMapperTableEntries name="CITY" expression="TALEND_USER.WRK_CUSTOMERS.CITY "/>
+        <DBMapperTableEntries name="COUNTRY" expression="TALEND_USER.WRK_CUSTOMERS.COUNTRY "/>
+        <DBMapperTableEntries name="ZIP" expression="TALEND_USER.WRK_CUSTOMERS.ZIP "/>
+        <DBMapperTableEntries name="STATE" expression="TALEND_USER.WRK_CUSTOMERS.STATE "/>
+        <DBMapperTableEntries name="PHONE" expression="TALEND_USER.WRK_CUSTOMERS.PHONE "/>
       </OutputTables>
     </nodeData>
   </node>
-  <node componentName="tELTOracleOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="352" posY="160">
+  <node componentName="tELTOracleOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="384" posY="256">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleOutput_2" show="false"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
     <elementParameter field="MEMO" name="WHERE_CLAUSE" value="&quot;&quot;" show="false"/>
@@ -315,6 +329,7 @@
     <elementParameter field="MAPPING_TYPE" name="MAPPING" value="oracle_id"/>
     <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false"/>
     <elementParameter field="TABLE" name="HINT_OPTIONS" show="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="CE_PRODUCTS"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="TABLE" label="CE_CUSTOMERS" name="tELTOracleOutput_2">
       <column comment="" key="true" length="38" name="ID_CUSTOMER" nullable="false" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
@@ -355,11 +370,59 @@
       </column>
     </metadata>
   </node>
-  <node componentName="tPrejob" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="896" posY="64">
+  <node componentName="tELTOracleInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="96" posY="288">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_4" show="false"/>
+    <elementParameter field="TECHNICAL" name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY" show="false"/>
+    <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_q8U3QFRHEeilY7boSqsamg - CE_CUSTOMERS" show="false"/>
+    <elementParameter field="TEXT" name="ELT_TABLE_NAME" value="&quot;CE_CUSTOMERS&quot;"/>
+    <elementParameter field="TEXT" name="ELT_SCHEMA_NAME" value="&quot;TALEND_USER&quot;"/>
+    <elementParameter field="MAPPING_TYPE" name="MAPPING" value="oracle_id"/>
+    <elementParameter field="TEXT" name="LABEL" value="CE_CUSTOMERS"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="TABLE" label="CE_CUSTOMERS" name="table4">
+      <column comment="" key="true" length="38" name="ID_CUSTOMER" nullable="false" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="38" name="ID" nullable="true" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="50" name="NAME" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="50" name="USERNAME" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="50" name="EMAIL" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="7" name="DATEOFBIRTH" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="50" name="STREETADDRESS" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="50" name="CITY" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="50" name="COUNTRY" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="6" name="ZIP" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="2" name="STATE" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="14" name="PHONE" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+    </metadata>
+  </node>
+  <node componentName="tPrejob" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-96" posY="64">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPrejob_1" show="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
   </node>
-  <node componentName="tOracleRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="896" posY="256">
+  <node componentName="tOracleRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-96" posY="256">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBRow_4" show="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY" show="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_q8U3QFRHEeilY7boSqsamg" show="false"/>
@@ -396,6 +459,7 @@
     <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
     <elementParameter field="TEXT" name="COMMIT_EVERY" value="10000" show="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="CREATE PRODUCTS_SEQ"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBRow_4"/>
     <metadata connector="REJECT" name="REJECT">
@@ -403,7 +467,7 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tOracleRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="896" posY="448">
+  <node componentName="tOracleRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-96" posY="352">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBRow_6" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tDBConnection_4"/>
@@ -438,6 +502,7 @@
     <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
     <elementParameter field="TEXT" name="COMMIT_EVERY" value="10000" show="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="CREATE CUSTOMERS_SEQ"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBRow_6"/>
     <metadata connector="REJECT" name="REJECT">
@@ -452,7 +517,7 @@
     <elementParameter field="TEXT" name="ELT_TABLE_NAME" value="&quot;WRK_PRODUCTS&quot;"/>
     <elementParameter field="TEXT" name="ELT_SCHEMA_NAME" value="&quot;TALEND_USER&quot;"/>
     <elementParameter field="MAPPING_TYPE" name="MAPPING" value="oracle_id"/>
-    <elementParameter field="TEXT" name="LABEL" value="PRODUCTS"/>
+    <elementParameter field="TEXT" name="LABEL" value="WRK_PRODUCTS"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="TABLE" label="WRK_PRODUCTS" name="table1">
       <column comment="" key="false" length="38" name="PRODUCTS" nullable="true" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
@@ -472,7 +537,7 @@
       </column>
     </metadata>
   </node>
-  <node componentName="tELTOracleMap" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="224" posY="64">
+  <node componentName="tELTOracleMap" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="256" posY="96">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleMap_1" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tDBConnection_4"/>
@@ -504,7 +569,7 @@
       <column comment="" key="false" length="38" name="PRODUCTS" nullable="true" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="100" name="PRODUCTNAME" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="255" name="PRODUCTNAME" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="100" name="COMPANYNAME" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
@@ -518,8 +583,16 @@
       </column>
     </metadata>
     <nodeData xsi:type="DBMapData">
-      <InputTables name="WRK_PRODUCTS" tableName="TALEND_USER.WRK_PRODUCTS" joinType="NO_JOIN" alias="WRK_PRODUCTS">
-        <DBMapperTableEntries name="PRODUCTS"/>
+      <InputTables name="TALEND_USER.CE_PRODUCTS" tableName="TALEND_USER.CE_PRODUCTS" joinType="NO_JOIN">
+        <DBMapperTableEntries name="ID_PRODUCT"/>
+        <DBMapperTableEntries name="PRODUCTS" expression="" operator="IS NULL"/>
+        <DBMapperTableEntries name="PRODUCTNAME"/>
+        <DBMapperTableEntries name="COMPANYNAME"/>
+        <DBMapperTableEntries name="PRICE"/>
+        <DBMapperTableEntries name="WAREHOUSELOCATIONSTATE"/>
+      </InputTables>
+      <InputTables name="TALEND_USER.WRK_PRODUCTS" tableName="TALEND_USER.WRK_PRODUCTS" joinType="RIGHT_OUTER_JOIN">
+        <DBMapperTableEntries name="PRODUCTS" expression="TALEND_USER.CE_PRODUCTS.PRODUCTS " join="true" operator="="/>
         <DBMapperTableEntries name="PRODUCTNAME"/>
         <DBMapperTableEntries name="COMPANYNAME"/>
         <DBMapperTableEntries name="PRICE"/>
@@ -527,22 +600,22 @@
       </InputTables>
       <OutputTables name="table2" tableName="CE_PRODUCTS">
         <DBMapperTableEntries name="ID_PRODUCT" expression="PRODUCTS_SEQ.NEXTVAL"/>
-        <DBMapperTableEntries name="PRODUCTS" expression="WRK_PRODUCTS.PRODUCTS "/>
-        <DBMapperTableEntries name="PRODUCTNAME" expression="WRK_PRODUCTS.PRODUCTNAME "/>
-        <DBMapperTableEntries name="COMPANYNAME" expression="WRK_PRODUCTS.COMPANYNAME "/>
-        <DBMapperTableEntries name="PRICE" expression="WRK_PRODUCTS.PRICE "/>
-        <DBMapperTableEntries name="WAREHOUSELOCATIONSTATE" expression="WRK_PRODUCTS.WAREHOUSELOCATIONSTATE "/>
+        <DBMapperTableEntries name="PRODUCTS" expression="TALEND_USER.WRK_PRODUCTS.PRODUCTS "/>
+        <DBMapperTableEntries name="PRODUCTNAME" expression="TALEND_USER.WRK_PRODUCTS.PRODUCTNAME "/>
+        <DBMapperTableEntries name="COMPANYNAME" expression="TALEND_USER.WRK_PRODUCTS.COMPANYNAME "/>
+        <DBMapperTableEntries name="PRICE" expression="TALEND_USER.WRK_PRODUCTS.PRICE "/>
+        <DBMapperTableEntries name="WAREHOUSELOCATIONSTATE" expression="TALEND_USER.WRK_PRODUCTS.WAREHOUSELOCATIONSTATE "/>
       </OutputTables>
     </nodeData>
   </node>
-  <node componentName="tELTOracleOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="352" posY="64">
+  <node componentName="tELTOracleOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="384" posY="96">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleOutput_1" show="false"/>
-    <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="MERGE"/>
+    <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
     <elementParameter field="TECHNICAL" name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY" show="false"/>
     <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_q8U3QFRHEeilY7boSqsamg - CE_PRODUCTS" show="false"/>
     <elementParameter field="MEMO" name="WHERE_CLAUSE" value="&quot;&quot;" show="false"/>
-    <elementParameter field="CHECK" name="USE_MERGE_UPDATE" value="true"/>
-    <elementParameter field="TABLE" name="SCHEMA_UPDATE">
+    <elementParameter field="CHECK" name="USE_MERGE_UPDATE" value="false" show="false"/>
+    <elementParameter field="TABLE" name="SCHEMA_UPDATE" show="false">
       <elementValue elementRef="SCHEMA_COLUMN" value="ID_PRODUCT"/>
       <elementValue elementRef="UPDATE" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="PRODUCTS"/>
@@ -556,12 +629,12 @@
       <elementValue elementRef="SCHEMA_COLUMN" value="WAREHOUSELOCATIONSTATE"/>
       <elementValue elementRef="UPDATE" value="true"/>
     </elementParameter>
-    <elementParameter field="CHECK" name="USE_MERGE_UPDATE_WHERE" value="false"/>
+    <elementParameter field="CHECK" name="USE_MERGE_UPDATE_WHERE" value="false" show="false"/>
     <elementParameter field="TEXT" name="MERGE_UPDATE_WHERE_STRING" value="&quot; &quot;" show="false"/>
-    <elementParameter field="CHECK" name="USE_MERGE_UPDATE_DELETE_WHERE" value="false"/>
+    <elementParameter field="CHECK" name="USE_MERGE_UPDATE_DELETE_WHERE" value="false" show="false"/>
     <elementParameter field="TEXT" name="MERGE_UPDATE_DELETE_WHERE_STRING" value="&quot; &quot;" show="false"/>
-    <elementParameter field="CHECK" name="USE_MERGE_INSERT" value="true"/>
-    <elementParameter field="TABLE" name="SCHEMA_INSERT">
+    <elementParameter field="CHECK" name="USE_MERGE_INSERT" value="false" show="false"/>
+    <elementParameter field="TABLE" name="SCHEMA_INSERT" show="false">
       <elementValue elementRef="SCHEMA_COLUMN" value="ID_PRODUCT"/>
       <elementValue elementRef="INSERT" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="PRODUCTS"/>
@@ -575,7 +648,7 @@
       <elementValue elementRef="SCHEMA_COLUMN" value="WAREHOUSELOCATIONSTATE"/>
       <elementValue elementRef="INSERT" value="true"/>
     </elementParameter>
-    <elementParameter field="CHECK" name="USE_MERGE_INSERT_WHERE" value="false"/>
+    <elementParameter field="CHECK" name="USE_MERGE_INSERT_WHERE" value="false" show="false"/>
     <elementParameter field="TEXT" name="MERGE_INSERT_WHERE_STRING" value="&quot; &quot;" show="false"/>
     <elementParameter field="TEXT" name="ELT_TABLE_NAME" value="&quot;CE_PRODUCTS&quot;"/>
     <elementParameter field="TEXT" name="ELT_SCHEMA_NAME" value="&quot;TALEND_USER&quot;"/>
@@ -583,8 +656,9 @@
     <elementParameter field="CHECK" name="USE_DIFFERENT_TABLE" value="false"/>
     <elementParameter field="TEXT" name="DIFFERENT_TABLE_NAME" value="&quot;&quot;" show="false"/>
     <elementParameter field="MAPPING_TYPE" name="MAPPING" value="oracle_id"/>
-    <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false" show="false"/>
+    <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false"/>
     <elementParameter field="TABLE" name="HINT_OPTIONS" show="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="CE_PRODUCTS"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="TABLE" label="CE_PRODUCTS" name="tELTOracleOutput_1">
       <column comment="" key="true" length="38" name="ID_PRODUCT" nullable="false" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
@@ -593,13 +667,13 @@
       <column comment="" key="false" length="38" name="PRODUCTS" nullable="true" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="92" name="PRODUCTNAME" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="100" name="PRODUCTNAME" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="39" name="COMPANYNAME" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="100" name="COMPANYNAME" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="6" name="PRICE" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="126" name="PRICE" nullable="true" pattern="" precision="0" sourceType="FLOAT" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="2" name="WAREHOUSELOCATIONSTATE" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
@@ -607,7 +681,37 @@
       </column>
     </metadata>
   </node>
-  <node componentName="tCreateTable" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="768" posY="448">
+  <node componentName="tELTOracleInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="96" posY="128">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tELTOracleInput_3" show="false"/>
+    <elementParameter field="TECHNICAL" name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY" show="false"/>
+    <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_q8U3QFRHEeilY7boSqsamg - CE_PRODUCTS" show="false"/>
+    <elementParameter field="TEXT" name="ELT_TABLE_NAME" value="&quot;CE_PRODUCTS&quot;"/>
+    <elementParameter field="TEXT" name="ELT_SCHEMA_NAME" value="&quot;TALEND_USER&quot;"/>
+    <elementParameter field="MAPPING_TYPE" name="MAPPING" value="oracle_id"/>
+    <elementParameter field="TEXT" name="LABEL" value="CE_PRODUCTS"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="TABLE" label="CE_PRODUCTS" name="table4">
+      <column comment="" key="true" length="38" name="ID_PRODUCT" nullable="false" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="38" name="PRODUCTS" nullable="true" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="PRODUCTNAME" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="COMPANYNAME" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="126" name="PRICE" nullable="true" pattern="" precision="0" sourceType="FLOAT" type="id_Float" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="2" name="WAREHOUSELOCATIONSTATE" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+    </metadata>
+  </node>
+  <node componentName="tCreateTable" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-96" posY="448">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tCreateTable_1" show="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY" show="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_q8U3QFRHEeilY7boSqsamg" show="false"/>
@@ -676,6 +780,7 @@
     <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
     <elementParameter field="CHECK" name="VERTICA_CREATE_PROJECTION" value="true" show="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="CREATE CE_PRODUCTS"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="metadata" name="tCreateTable_1">
       <column comment="" key="true" length="-1" name="ID_PRODUCT" nullable="true" pattern="" precision="-1" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
@@ -686,7 +791,7 @@
       <column comment="" key="false" length="2" name="WarehouseLocationState" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tCreateTable" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="672" posY="448">
+  <node componentName="tCreateTable" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-96" posY="544">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tCreateTable_2" show="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY" show="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_q8U3QFRHEeilY7boSqsamg" show="false"/>
@@ -755,6 +860,7 @@
     <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
     <elementParameter field="CHECK" name="VERTICA_CREATE_PROJECTION" value="true" show="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="CREATE CE_CUSTOMERS"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="metadata" name="tCreateTable_2">
       <column comment="" key="true" length="-1" name="ID_CUSTOMER" nullable="true" pattern="" precision="-1" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
@@ -771,11 +877,11 @@
       <column comment="" key="false" length="14" name="Phone" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tPostjob" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="704" posY="64">
+  <node componentName="tPostjob" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="576" posY="64">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPostjob_1" show="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
   </node>
-  <node componentName="tRunJob" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="704" posY="160">
+  <node componentName="tRunJob" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="576" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tRunJob_1" show="false"/>
     <elementParameter field="CHECK" name="USE_DYNAMIC_JOB" value="false"/>
     <elementParameter field="TEXT" name="CONTEXT_JOB" value="" show="false"/>
@@ -791,13 +897,13 @@
     <elementParameter field="CHECK" name="PROPAGATE_CHILD_RESULT" value="false"/>
     <elementParameter field="CHECK" name="PRINT_PARAMETER" value="false"/>
     <elementParameter field="CHECK" name="TRANSMIT_ORIGINAL_CONTEXT" value="true" show="false"/>
-    <elementParameter field="TEXT" name="LABEL" value="LOAD TO WRK_PURCHASES"/>
+    <elementParameter field="TEXT" name="LABEL" value="LOAD TO CE_PURCHASES"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tRunJob_1">
       <column comment="" key="false" length="256" name="FILE_NAME" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tOracleConnection" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="896" posY="160">
+  <node componentName="tOracleConnection" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-96" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBConnection_4" show="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_q8U3QFRHEeilY7boSqsamg" show="false"/>
@@ -842,6 +948,9 @@
   <connection connectorName="TABLE" label="CE_CUSTOMERS" lineStyle="9" metaname="table1" offsetLabelX="0" offsetLabelY="0" source="tELTOracleMap_2" target="tELTOracleOutput_2">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="table1" show="false"/>
   </connection>
+  <connection connectorName="TABLE" label="TALEND_USER.CE_CUSTOMERS" lineStyle="9" metaname="table4" offsetLabelX="0" offsetLabelY="0" source="tELTOracleInput_4" target="tELTOracleMap_2">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="table4" show="false"/>
+  </connection>
   <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tPrejob_1" offsetLabelX="0" offsetLabelY="0" source="tPrejob_1" target="tDBConnection_4">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk1" show="false"/>
   </connection>
@@ -856,6 +965,9 @@
   </connection>
   <connection connectorName="TABLE" label="CE_PRODUCTS" lineStyle="9" metaname="table2" offsetLabelX="0" offsetLabelY="0" source="tELTOracleMap_1" target="tELTOracleOutput_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="table2" show="false"/>
+  </connection>
+  <connection connectorName="TABLE" label="TALEND_USER.CE_PRODUCTS" lineStyle="9" metaname="table4" offsetLabelX="0" offsetLabelY="0" source="tELTOracleInput_3" target="tELTOracleMap_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="table4" show="false"/>
   </connection>
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tCreateTable_1" offsetLabelX="0" offsetLabelY="0" source="tCreateTable_1" target="tCreateTable_2">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk5" show="false"/>

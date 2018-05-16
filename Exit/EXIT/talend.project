@@ -145,6 +145,7 @@
       <relatedItems xmi:id="_0zPVLleAEeid35w6CuKXlA" id="_q8U3QFRHEeilY7boSqsamg - WRK_PRODUCTS" version="Latest" type="schema"/>
       <relatedItems xmi:id="_1dRCMFeDEeid35w6CuKXlA" id="_q8U3QFRHEeilY7boSqsamg - CE_PRODUCTS" version="Latest" type="schema"/>
       <relatedItems xmi:id="_n67z0FhuEeid35w6CuKXlA" id="_kcMcEFhuEeid35w6CuKXlA" version="Latest" type="job"/>
+      <relatedItems xmi:id="_FIZWoFjqEeid35w6CuKXlA" id="_q8U3QFRHEeilY7boSqsamg - CE_CUSTOMERS" version="Latest" type="schema"/>
     </ItemsRelations>
     <ItemsRelations xmi:id="_3Ay_sFhuEeid35w6CuKXlA">
       <baseItem xmi:id="_3Ay_sVhuEeid35w6CuKXlA" id="_kcMcEFhuEeid35w6CuKXlA" version="0.1" type="job"/>
